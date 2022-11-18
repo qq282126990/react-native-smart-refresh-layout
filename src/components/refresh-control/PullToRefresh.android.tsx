@@ -19,31 +19,33 @@ const fruitsAnimation = require('../../assets/bouncing-fruits.json');
 // 下拉刷新头部高度
 const HEADER_HEIGHT = 70;
 
-const PullToRefresh = forwardRef((props: Props, forwardedRef: any) => {
-  return (
-    <SmartRefresh
-      ref={forwardedRef}
-      onRefresh={props.onRefresh}
-      children={props.children}
-      headerHeight={HEADER_HEIGHT}
-      renderHeader={
-        <SmartRefreshHeader
-          style={{
-            ...styles.header,
-            height: HEADER_HEIGHT,
-          }}>
-          <LottieView
+const PullToRefresh = forwardRef(
+  (props: Props, forwardedRef: React.ForwardedRef<unknown>) => {
+    return (
+      <SmartRefresh
+        ref={forwardedRef}
+        onRefresh={props.onRefresh}
+        children={props.children}
+        headerHeight={HEADER_HEIGHT}
+        renderHeader={
+          <SmartRefreshHeader
             style={{
+              ...styles.header,
               height: HEADER_HEIGHT,
-            }}
-            source={fruitsAnimation}
-            autoPlay
-          />
-        </SmartRefreshHeader>
-      }
-    />
-  );
-});
+            }}>
+            <LottieView
+              style={{
+                height: HEADER_HEIGHT,
+              }}
+              source={fruitsAnimation}
+              autoPlay
+            />
+          </SmartRefreshHeader>
+        }
+      />
+    );
+  },
+);
 
 const styles = StyleSheet.create({
   header: {

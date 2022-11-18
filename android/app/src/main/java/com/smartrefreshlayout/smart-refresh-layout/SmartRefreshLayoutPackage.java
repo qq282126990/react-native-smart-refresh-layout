@@ -3,6 +3,8 @@ package com.smartrefreshlayout;
 
 // 自定义刷新下拉头部
 import com.smartrefreshlayout.SmartRefreshHeaderManager;
+// 外层组件
+import com.smartrefreshlayout.SmartRefreshLayoutManager;
 // react
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -21,6 +23,9 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
     ReactApplicationContext reactContext
   ) {
     return Arrays.<ViewManager>asList(
+      // 外层组件
+      new SmartRefreshLayoutManager(),
+      // 自定义刷新下拉头部
       new SmartRefreshHeaderManager()
     );
   }

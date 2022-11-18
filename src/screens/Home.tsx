@@ -8,6 +8,10 @@ type Item = {
   id?: string;
 };
 
+type PullToRefreshAndroid = {
+  handleFinishRefresh: () => void;
+};
+
 // item高度
 const ITEM_HEIGHT: number = 70;
 
@@ -35,7 +39,7 @@ const renderItem = ({item}: {item: Item}) => <Item title={item.title} />;
 
 const Home: React.FC<{}> = () => {
   // 安卓下拉刷新组件
-  const pullToRefreshAndroid = useRef(null);
+  const pullToRefreshAndroid = useRef<PullToRefreshAndroid>(null);
 
   return (
     <View style={styles.wrapper}>
@@ -52,6 +56,10 @@ const Home: React.FC<{}> = () => {
           <PullToRefreshAndroid
             onRefresh={() => {
               console.log('开始刷新');
+
+              setTimeout(() => {
+                pullToRefreshAndroid.current?.handleFinishRefresh();
+              }, 1000);
             }}
             ref={pullToRefreshAndroid}
           />
