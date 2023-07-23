@@ -67,9 +67,9 @@ public class SmartRefreshLayoutManager
     // 禁止上拉加载
     smartRefreshLayout.setEnableLoadMore(false);
     // 最大显示下拉高度/Header标准高度
-    smartRefreshLayout.setHeaderMaxDragRate(1);
+    smartRefreshLayout.setHeaderMaxDragRate(2);
     //触发刷新距离 与 HeaderHeight 的比率
-    smartRefreshLayout.setHeaderTriggerRate(0.5f);
+    smartRefreshLayout.setHeaderTriggerRate(1);
     // 是否启用越界回弹
     smartRefreshLayout.setEnableOverScrollBounce(true);
     // 是否启用越界拖动（仿苹果效果）

@@ -1,7 +1,8 @@
 import React, {useRef} from 'react';
 import {View, Text, StyleSheet, FlatList} from 'react-native';
 
-import PullToRefreshAndroid from '../components/refresh-control/PullToRefresh.android';
+// import PullToRefreshAndroid from '../components/refresh-control/PullToRefresh.android';
+import PullToRefreshAndroid from '../components/refresh-control/PullToRefreshClassicsHeader.android';
 
 type Item = {
   title: string;

@@ -1,6 +1,8 @@
 // 此处请修改为你的包名称
 package com.smartrefreshlayout;
 
+// 经典下拉头部
+import com.smartrefreshlayout.ClassicsHeaderManager;
 // 自定义刷新下拉头部
 import com.smartrefreshlayout.SmartRefreshHeaderManager;
 // 外层组件
@@ -26,7 +28,9 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
       // 外层组件
       new SmartRefreshLayoutManager(),
       // 自定义刷新下拉头部
-      new SmartRefreshHeaderManager()
+      new SmartRefreshHeaderManager(),
+      // ClassicsHeaderManager
+      new ClassicsHeaderManager()
     );
   }
 
