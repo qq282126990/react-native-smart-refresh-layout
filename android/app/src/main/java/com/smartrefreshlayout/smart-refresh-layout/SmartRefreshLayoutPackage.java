@@ -7,6 +7,8 @@ import com.smartrefreshlayout.ClassicsHeaderManager;
 import com.smartrefreshlayout.SmartRefreshHeaderManager;
 // 外层组件
 import com.smartrefreshlayout.SmartRefreshLayoutManager;
+// 雷达刷新头
+import com.smartrefreshlayout.BezierRadarHeaderManager;
 // react
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -30,7 +32,10 @@ public class SmartRefreshLayoutPackage implements ReactPackage {
       // 自定义刷新下拉头部
       new SmartRefreshHeaderManager(),
       // ClassicsHeaderManager
-      new ClassicsHeaderManager()
+      new ClassicsHeaderManager(),
+      // BezierRadarHeaderManager
+      new BezierRadarHeaderManager()
+
     );
   }
 

@@ -1,7 +1,8 @@
 import React, {forwardRef, memo} from 'react';
+import {StyleSheet} from 'react-native';
 
 import SmartRefresh from '../smart-refresh/SmartRefresh';
-import ClassicsHeader from '../smart-refresh/ClassicsHeader';
+import BezierRadarHeader from '../smart-refresh/BezierRadarHeader';
 
 // types
 import type {ScrollViewProps} from 'react-native';
@@ -23,22 +24,25 @@ const PullToRefresh = forwardRef(
         children={props.children}
         headerHeight={HEADER_HEIGHT}
         renderHeader={
-          <ClassicsHeader
+          <BezierRadarHeader
             style={{
-              height: HEADER_HEIGHT,
-            }}>
-            {/* <LottieView
-              style={{
-                height: HEADER_HEIGHT,
-              }}
-              source={fruitsAnimation}
-              autoPlay
-            /> */}
-          </ClassicsHeader>
+              ...styles.header,
+            }}
+          />
         }
       />
     );
   },
 );
+
+const styles = StyleSheet.create({
+  header: {
+    height: 100,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#5A66F1',
+  },
+});
 
 export default memo(PullToRefresh);

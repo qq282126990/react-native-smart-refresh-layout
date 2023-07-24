@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, FlatList} from 'react-native';
 
 // import PullToRefreshAndroid from '../components/refresh-control/PullToRefresh.android';
 import PullToRefreshAndroid from '../components/refresh-control/PullToRefreshClassicsHeader.android';
+import PullToRefreshBezierRadarHeader from '../components/refresh-control/PullToRefreshBezierRadarHeader.android';
 
 type Item = {
   title: string;
@@ -54,7 +55,7 @@ const Home: React.FC<{}> = () => {
         })}
         keyExtractor={item => item.id}
         refreshControl={
-          <PullToRefreshAndroid
+          <PullToRefreshBezierRadarHeader
             onRefresh={() => {
               console.log('开始刷新');
 
